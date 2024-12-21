@@ -1,30 +1,23 @@
-// This program calculates the total cost of grocery items, including a 10% tax.
-
+// Check any number positive or negative and even or odd
+// Description: Enter any integer number
+// Use the condition to check it's positive or negative, then
+// use the condition to check if it's even or odd
+import 'dart:io';
 void main() {
-  // Constants
-  const double taxRate = 0.10;
-
-  // List of grocery items, each represented as a map with 'name' and 'price'.
-  List<Map<String, dynamic>> groceryItems = [
-    {'name': 'Milk', 'price': 1.5},
-    {'name': 'Bread', 'price': 2.0},
-    {'name': 'Eggs', 'price': 3.0},
-    {'name': 'Cheese', 'price': 4.5},
-  ];
-
-  // Calculate total price of items before tax
-  double totalPriceBeforeTax = 0.0;
-  for (var item in groceryItems) {
-    totalPriceBeforeTax += item['price'];
+  // take the number from the user console input
+  print('Enter a number:');
+  int number = int.parse(stdin.readLineSync()!);
+  if (number > 0) {
+    print('$number is positive');
+  } else if (number < 0) {
+    print('$number is negative');
+  } else {
+    print('$number is zero');
   }
 
-  // Calculate tax and total price after tax
-  double taxAmount = totalPriceBeforeTax * taxRate;
-  double totalPriceAfterTax = totalPriceBeforeTax + taxAmount;
-
-  // Print results
-  print('Total Price Before Tax: \$${totalPriceBeforeTax}');
-  print('Tax Amount (10%): \$${taxAmount}');
-  print('Total Price After Tax: \$${totalPriceAfterTax}');
+  if (number % 2 == 0) {
+    print('$number is even');
+  } else {
+    print('$number is odd');
+  }
 }
-
